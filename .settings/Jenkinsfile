@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                sh '''
+                node --version
+                touch my-new-file.txt
+                '''
+            }
+        }
+    }
+}
