@@ -2,11 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
                 sh '''
+                ls -la
                 node --version
-                touch my-new-file.txt
+                npm --version
+                npm ci
+                npm run build
+                ls -la
                 '''
             }
         }
